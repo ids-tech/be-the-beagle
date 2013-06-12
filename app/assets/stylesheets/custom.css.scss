@@ -12,6 +12,17 @@ $grayMediumLight: #eaeaea;
 
 /* universal */
 
+h1 {
+  text-align: center;
+}
+
+hr {
+  background-color: #eee;
+  border: 0 none;
+  color: #eee;
+  height: 3px;
+}
+   
 html {
   overflow-y: scroll;
 }
@@ -26,6 +37,14 @@ textarea {
 
 .center {
   text-align: center;
+}
+
+.button_table {
+  td {
+    overflow: hidden;
+    width: 128px;
+    height: 112px;
+  }
 }
 
 /* miscellaneous */
