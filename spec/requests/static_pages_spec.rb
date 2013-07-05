@@ -10,19 +10,19 @@ describe "Static pages" do
     end
   end
 
-  describe "Help page" do
-
-    it "should have the content 'Help'" do
-      visit '/static_pages/help'
-      page.should have_content('Help')
-    end
-  end
-
   describe "About page" do
 
     it "should have the content 'About'" do
       visit '/static_pages/about'
       page.should have_content('About')
+    end
+  end
+
+  describe "Sign In page" do
+
+    it "should have the content 'Be-The-Beagle'" do
+      visit '/static_pages/signin'
+      page.should have_content('Be-The-Beagle')
     end
   end
 end
