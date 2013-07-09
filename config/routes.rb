@@ -13,6 +13,7 @@ BeTheBeagle::Application.routes.draw do
   get "static_pages/home"
   get "static_pages/help"
   get "static_pages/about"
+  get "static_pages/signin"
   get "no_format_pages/blob"
 
   # The priority is based upon order of creation:
