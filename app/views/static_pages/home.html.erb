@@ -1,16 +1,21 @@
 <% provide(:title, 'Home') %>
 <p>
-    <table class="button_table" align="center">
-      <tr><td></td><td></td><td></td></tr>
-      <tr>
-        <td></td>
-        <td>
-          <a href = <%= blob_path %>>
-            <img src="/assets/blob-button.gif"/>
-          </a>
-        </td>
-        <td></td>
-      </tr>
-      <tr><td></td><td></td><td></td></tr>
-    </table>
+  <table  class="button_table" align="center">
+    <tr><td></td><td></td><td></td><td></td></tr>
+    <tr>
+      <td></td>
+      <td>
+        <a href = <%= blob_path %>>
+          <img src="/assets/blob-button.gif"/>
+        </a>
+      </td>
+      <td>
+        <a href = <%= signin_path %>>
+          <img src="/assets/flash-decks-button.gif"/>
+        </a>
+      </td>
+      <td></td>
+    </tr>
+    <tr><td></td><td></td><td></td><td></td></tr>
+  </table>
 </p>

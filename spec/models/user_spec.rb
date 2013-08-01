@@ -17,6 +17,7 @@ describe User do
   it { should respond_to(:remember_token) }
   it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
+  it { should respond_to(:flash_decks) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -115,5 +116,29 @@ describe User do
   describe "remember token" do
     before { @user.save }
     its(:remember_token) { should_not be_blank }
+  end
+
+  describe "flash_deck associations" do
+
+    before { @user.save }
+    let!(:older_flash_deck) do 
+      FactoryGirl.create(:flash_deck, user: @user, created_at: 1.day.ago)
+    end
+    let!(:newer_flash_deck) do
+      FactoryGirl.create(:flash_deck, user: @user, created_at: 1.hour.ago)
+    end
+
+    it "should have the right flash_decks in the right order" do
+      @user.flash_decks.should == [newer_flash_deck, older_flash_deck]
+    end
+
+    it "should destroy associated flash_decks" do
+      flash_decks = @user.flash_decks.dup
+      @user.destroy
+      flash_decks.should_not be_empty
+      flash_decks.each do |flash_deck|
+        FlashDeck.find_by_id(flash_deck.id).should be_nil
+      end
+    end
   end
 end

@@ -9,4 +9,9 @@ FactoryGirl.define do
       admin true
     end
   end
+
+  factory :flash_deck do
+    title "Test flash deck"
+    user
+  end
 end
