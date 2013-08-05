@@ -15,11 +15,13 @@
       <%= f.submit "Create", class: "btn btn-large btn-primary" %>
     <% end %>
   </aside>
-    <div class="span12">
+  <div id="pagination_flash_decks">
+  <div class="span12">
     <% if @user.flash_decks.any? %>
       <h3>Flash Decks (<%= @user.flash_decks.count %>)</h3>
-        <%= render @flash_decks %>
+      <%= render @flash_decks %>
       <%= will_paginate @flash_decks %>
     <% end %>
-    </div>
+  </div>
+  </div>
 </div>

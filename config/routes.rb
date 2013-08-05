@@ -1,4 +1,7 @@
 BeTheBeagle::Application.routes.draw do
+  resources :goals
+
+
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   resources :flash_decks, only: [:create, :destroy]
