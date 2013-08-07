@@ -1,0 +1,28 @@
+
+<% provide(:title, @user.name) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <hr>
+    <%= form_for(@new_flash_deck) do |f| %>
+      <div class="new_flash_deck">
+        <%= f.text_area :title, placeholder: "Enter title for new flash deck..." %>
+      </div>
+      <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </aside>
+  <div id="pagination_flash_decks">
+    <div class="span12">
+      <% if @user.flash_decks.any? %>
+        <h3>Flash Decks (<%= @user.flash_decks.count %>)</h3>
+        <%= render @flash_decks %>
+        <%= will_paginate @flash_decks %>
+      <% end %>
+    </div>
+  </div>
+</div>

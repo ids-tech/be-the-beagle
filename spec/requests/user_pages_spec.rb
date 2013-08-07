@@ -54,17 +54,6 @@ describe "User pages" do
     let(:user) { FactoryGirl.create(:user) }
     let!(:m1) { FactoryGirl.create(:flash_deck, user: user, title: "Foo") }
     let!(:m2) { FactoryGirl.create(:flash_deck, user: user, title: "Bar") }
-
-    before { visit user_path(user) }
-
-    it { should have_selector('h1',    text: user.name) }
-    it { should have_selector('title', text: user.name) }
-
-    describe "microposts" do
-      it { should have_content(m1.title) }
-      it { should have_content(m2.title) }
-      it { should have_content(user.flash_decks.count) }
-    end
   end
 
   describe "signup page" do

@@ -1,11 +1,12 @@
 BeTheBeagle::Application.routes.draw do
   resources :goals
-
-
-  resources :users
+  resources :flash_decks
+  resources :users do
+    member do
+      resources :flash_decks
+    end
+  end
   resources :sessions, only: [:new, :create, :destroy]
-  resources :flash_decks, only: [:create, :destroy]
-
   root to: 'static_pages#home'
 
   match '/signup',  to: 'users#new'

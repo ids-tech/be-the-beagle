@@ -1,4 +1,4 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, @flash_deck.title) %>
 <div class="row">
   <aside class="span4">
     <section>
@@ -8,4 +8,8 @@
       </h1>
     </section>
   </aside>
+  <div class="span12">
+      <%= render 'flash_decks/flash_deck' %>
+  </div>
 </div>
+
