@@ -102,7 +102,6 @@ p {
   color: $gray;
 }
 
-
 /* header */
 
 #logo {
@@ -132,6 +131,7 @@ footer {
     color: $gray;
     &:hover { 
       color: $grayDarker;
+      background-color: white;
     }
   }  
   small { 
