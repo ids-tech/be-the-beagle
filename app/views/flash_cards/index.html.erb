@@ -1,0 +1,29 @@
+
+<% provide(:title, 'Flash Cards') %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+    <hr>
+    <%= form_for(@new_flash_card) do |f| %>
+      <div class="new_flash_card">
+        <%= f.text_area :front, placeholder: "Front" %>
+        <%= f.text_area :back, placeholder: "Back" %>
+      </div>
+      <%= f.submit "Create", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </aside>
+  <div id="pagination_flash_cards">
+    <div class="span12">
+      <% if @flash_deck.flash_cards.any? %>
+        <h3>Flash Cards (<%= @flash_deck.flash_cards.count %>)</h3>
+        <%= will_paginate @flash_cards %>
+        <%= render @flash_cards %>
+      <% end %>
+    </div>
+  </div>
+</div>

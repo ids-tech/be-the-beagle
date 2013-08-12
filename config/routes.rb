@@ -1,9 +1,15 @@
 BeTheBeagle::Application.routes.draw do
   resources :goals
+  resources :flash_cards
   resources :flash_decks
   resources :users do
     member do
       resources :flash_decks
+    end
+  end
+  resources :flash_decks do
+    member do
+      resources :flash_cards
     end
   end
   resources :sessions, only: [:new, :create, :destroy]

@@ -1,4 +1,6 @@
-<div class="flash_deck">
-  <%= flash_deck.title %>
-</div>
+<%= link_to(flash_deck) do %>
+  <div class="flash_deck">
+    <%= flash_deck ? flash_deck.title : @flash_deck.title %>
+  </div>
+<% end %>
 

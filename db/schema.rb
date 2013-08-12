@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802104419) do
+ActiveRecord::Schema.define(:version => 20130808084015) do
 
   create_table "employee", :id => false, :force => true do |t|
     t.string "name"
@@ -19,12 +19,24 @@ ActiveRecord::Schema.define(:version => 20130802104419) do
     t.string "jobtitle"
   end
 
+  create_table "flash_cards", :force => true do |t|
+    t.integer  "flash_deck_id"
+    t.string   "front"
+    t.string   "back"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
+
+  add_index "flash_cards", ["flash_deck_id", "created_at"], :name => "index_flash_cards_on_flash_deck_id_and_created_at"
+
   create_table "flash_decks", :force => true do |t|
     t.string   "title"
     t.integer  "user_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  add_index "flash_decks", ["user_id", "created_at"], :name => "index_flash_decks_on_user_id_and_created_at"
 
   create_table "goals", :force => true do |t|
     t.string   "name"

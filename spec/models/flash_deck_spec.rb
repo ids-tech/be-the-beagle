@@ -9,6 +9,7 @@ describe FlashDeck do
 
   it { should respond_to(:title) }
   it { should respond_to(:user_id) }
+  it { should respond_to(:flash_cards) }
   it { should respond_to(:user) }
   its(:user) { should == user }
 
@@ -27,7 +28,7 @@ describe FlashDeck do
     it { should_not be_valid }
   end
 
-  describe "with blank content" do
+  describe "with blank title" do
     before { @flash_deck.title = " " }
     it { should_not be_valid }
   end

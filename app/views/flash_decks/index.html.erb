@@ -1,5 +1,5 @@
 
-<% provide(:title, @user.name) %>
+<% provide(:title, 'Flash Decks') %>
 <div class="row">
   <aside class="span4">
     <section>
@@ -20,8 +20,8 @@
     <div class="span12">
       <% if @user.flash_decks.any? %>
         <h3>Flash Decks (<%= @user.flash_decks.count %>)</h3>
-        <%= render @flash_decks %>
         <%= will_paginate @flash_decks %>
+        <%= render @flash_decks %>
       <% end %>
     </div>
   </div>

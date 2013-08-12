@@ -14,4 +14,10 @@ FactoryGirl.define do
     title "Test flash deck"
     user
   end
+
+  factory :flash_card do
+    front "Flash card front"
+    back "Flash card back"
+    flash_deck
+  end
 end

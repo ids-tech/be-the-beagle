@@ -1,0 +1,17 @@
+<% provide(:title, @flash_card.front) %>
+<div class="row">
+  <aside class="span4">
+    <section>
+      <h1>
+        <%= gravatar_for @user %>
+        <%= @user.name %>
+      </h1>
+    </section>
+  </aside>
+  <div class="span12">
+    <div class="flash_card_center">
+      <%= render 'flash_cards/flash_card' %>
+    </div>
+  </div>
+</div>
+

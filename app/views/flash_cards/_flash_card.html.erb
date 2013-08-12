@@ -1,0 +1,10 @@
+<div id="flash_card_div" class="blah" onclick="flipCard(this)" >
+  <div class="flash_card_show">
+    <span><i>- Front -</i></span><br><%= flash_card ? flash_card.front : @flash_card.front %>
+  </div>
+  <div class="flash_card_hide">
+    <span><i>- Back -</i></span><br><%= flash_card ? flash_card.back : @flash_card.back %>
+  </div>
+</div>
+
+
